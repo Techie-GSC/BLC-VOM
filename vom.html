@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <!-- Discourage the browser from caching the HTML page -->
+  <meta
+    http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate"
+  >
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <title>Verse of the Month</title>
+
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #verse-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+
+<body>
+  <img
+    id="verse-image"
+    src=""
+    alt="Verse of the Month"
+  >
+
+  <script>
+    /*
+      This is the image filename stored beside index.html.
+
+      Each time the page loads, JavaScript appends a unique timestamp:
+      verse.jpg?v=1721839200000
+
+      The page URL itself remains unchanged.
+    */
+    const imagePath = "verse.jpg";
+    const cacheBuster = Date.now();
+
+    document.getElementById("verse-image").src =
+      `${imagePath}?v=${cacheBuster}`;
+  </script>
+</body>
+</html>
